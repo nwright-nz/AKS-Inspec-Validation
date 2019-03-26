@@ -1,0 +1,32 @@
+name: aks-cluster
+title: AKS Cluster Validator
+maintainer: Nigel Wright <nigel.wright@dimensiondata.com>
+copyright: None
+copyright_email: nigel.wright@dimensiondata.com 
+license: Apache-2.0
+summary: An InSpec Compliance Profile to check the state of a freshly deployed AKS cluster
+version: 1.0.0
+depends:
+  - name: inpec-azure
+    url: https://github.com/inspec/inspec-azure/archive/master.tar.gz
+supports:
+  - platform: azure
+attributes:
+ - name: resource_group
+   type: string
+   required: true
+ - name: cluster_name
+   type: string
+   required: true
+ - name: dns_prefix
+   type: string
+   required: true
+ - name: worker_size
+   type: string
+   required: true
+ - name: worker_count
+   type: numeric
+   required: true
+ - name: kube_version
+   type: string
+   required: true
